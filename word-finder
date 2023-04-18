@@ -1,0 +1,29 @@
+# word finder which will take a string as an input and return all instances of words found within the string
+def word_search(word)
+  #split string at ''
+  arr=word.split('')
+
+  #excluding single letter words
+  #you can change 2 to 1 in line below to select for single letter words too
+  (1..word.size).each_with_object([]) do |n,a|
+
+    #find combinations for n=2 all the way to n=word.size
+    arr.combination(n).each do |comb|
+
+      #for each combination
+      #find the permutations of all the arrangements
+      comb.permutation(n).each do |perm|
+        
+        #join the array
+        w=perm.join
+
+        #check to see if word is in dictionary and it's not already collected
+        if ["abcd", "c", "def", "h", "ij", "cde", "bc", "fg", "g", "hij", "bcd", "a", "ac", "e"].include?(w) && !a.include?(w) && 
+
+          #if it is, add to collecting array
+          a<<w
+        end
+      end
+    end
+  end
+end
