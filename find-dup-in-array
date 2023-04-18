@@ -1,0 +1,5 @@
+# method that takes the list as an argument and returns the first integer to appear three times.
+def list_duplicates(array)
+  duplicates = array.select { |e| array.count(e) > 3 }
+  duplicates.uniq.first
+end
