@@ -3,8 +3,7 @@ def word_search(word)
   #split string at ''
   arr=word.split('')
 
-  #excluding single letter words
-  #you can change 2 to 1 in line below to select for single letter words too
+  #including single letter words, range starts from 1
   (1..word.size).each_with_object([]) do |n,a|
 
     #find combinations for n=2 all the way to n=word.size
